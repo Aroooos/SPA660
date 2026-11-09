@@ -1,0 +1,28 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Node
+node_modules/
+frontend/dist/
+
+# evt1 file too large for GitHub (208MB, Level-1 raw data, not needed)
+data/chandra/7641/acisf07641_000N003_evt1.fits.gz
+
+# Generated work files (recreated by following README steps)
+work/7641/*.fits
+work/7641/*.png
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Word temp files
+~$*
+
+# IDE
+.vscode/
+.idea/
