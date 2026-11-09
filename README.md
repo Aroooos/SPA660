@@ -168,7 +168,22 @@ Takes about 3 minutes. Lots of output is normal.
 
 To view the spectrum in DS9: open DS9 → File → Open Other → Open PHA → select `pulsar_spec_grp.pi`. A plot window should appear showing counts vs energy.
 
-## B. Spectral Analysis
+## C. Generate X-ray Images & Radial Profile
+
+These plots are generated using CIAO's built-in Python (pycrates + matplotlib). No extra installs needed.
+
+```bash
+python work/7641/make_plots.py
+```
+
+**Verify:** Three new PNG files should appear in the project root:
+- `xray_full_field.png` — full 1000×1000 field, pulsar marked with crosshair
+- `xray_field_image.png` — zoomed view with source/background regions drawn
+- `radial_profile.png` — radial brightness profile showing how emission drops with distance
+
+The script reads `work/7641/img_0.5-7keV.fits` (created in Step 2), calculates radial distances from the pulsar, and bins into annuli. Surface brightness = counts / area in each ring. Error bars are Poisson (√N).
+
+## D. Spectral Analysis
 
 Used Sherpa (built into CIAO) to fit the spectrum. The fitting script is in `work/7641/fit_final.py`.
 
